@@ -23,7 +23,7 @@ public class C01_Capabilities {
                 .setUdid("b61182a7") // adb devices - hangi cihazda testimi çalıştıracaksam onun udid bilgisini giriyorum
                 .setAppPackage("io.appium.android.apis") // Çalıştıracağımız uygulamayı seçmek için
                 .setAppActivity("io.appium.android.apis.ApiDemos") // Çalıştıracağımız uygulamayı seçmek için
-                .setAvd("Pixel_3a_API_34_extension_level_7_x86_64") //Kapalı emülatörü açmak için
+                .setAvd("pixel_q......") //Kapalı emülatörü açmak için
                 .setAvdLaunchTimeout(Duration.ofMinutes(5)); // Emülatörün açılışında süre tanımlaması yapmak için
 
         URL url = new URL("http://0.0.0.0:4723");
@@ -31,3 +31,7 @@ public class C01_Capabilities {
     }
 }
 
+        /*
+        setAvd metodu, genellikle Android Sanal Cihazı (AVD) başlatmak için kullanılır.
+        Eğer gerçek bir cihazı test etmek istiyorsanız, bu metodu kullanmanıza gerek yoktur.
+        */

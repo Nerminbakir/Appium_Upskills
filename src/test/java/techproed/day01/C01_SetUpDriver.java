@@ -29,14 +29,15 @@ public class C01_SetUpDriver {
 
     @Test
     public void testUiAutomator2Options() throws MalformedURLException {
-       String appUrl = System.getProperty("user.dir") + File.separator + "src"
-               + File.separator + "test"
-               + File.separator + "resources"
-               + File.separator + "ApiDemos-debug.apk";
+       String appUrl = System.getProperty("user.dir") // C:\Users\nrmn_\IdeaProjects\Appium_Upskills
+               + File.separator + "src" // src
+               + File.separator + "test" // test
+               + File.separator + "resources" // resources
+               + File.separator + "ApiDemos-debug.apk"; // ApiDemos-debug.apk
 
         UiAutomator2Options options = new UiAutomator2Options()
                 .setApp(appUrl)
-//                .setUdid("b61182a7") // UDID; Unique Device Identifier
+//                .setUdid("b61182a7") // UDID; Unique Device Identifier --> Birden fazla cihaz varsa yazmak gerekir. Tek cihaz için yazmasakta doğru bir şekilde çalışır.
 //                .setAppPackage("io.appium.android.apis")
 //                .setAppActivity("io.appium.android.apis.ApiDemos")
                 ;
@@ -45,12 +46,16 @@ public class C01_SetUpDriver {
         AndroidDriver driver = new AndroidDriver(url, options);
     }
 }
-
-
         /*
             Yukarıdaki her iki test notasyonu da aynı işlevi görür.
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("platformName", "android");          -- UiAutomator2Options options = new UiAutomator2Options(); bu ifadenin içindedir.
             capabilities.setCapability("automationName", "uiautomator2");   -- UiAutomator2Options options = new UiAutomator2Options(); bu ifadenin içindedir.
 
-         */
+            File.separator; Java programlama dilinde dosya yollarını oluştururken kullanılan bir sabittir.
+            Bu sabit, platforma özgü dosya ayırıcı karakterini temsil eder.
+            Dosya ayırıcı karakteri, işletim sistemine bağlı olarak farklılık gösterir.
+            Örneğin, Windows işletim sistemlerinde dosya ayırıcı karakteri "\", Unix tabanlı işletim sistemlerinde ise "/" olarak kullanılır.
+
+        */
+
