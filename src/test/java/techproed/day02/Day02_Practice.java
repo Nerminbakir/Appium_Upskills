@@ -9,7 +9,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Practice {
+public class Day02_Practice {
 
     @Test
     public void testLocators() throws MalformedURLException {

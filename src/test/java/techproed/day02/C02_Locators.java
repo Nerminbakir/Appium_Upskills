@@ -1,30 +1,14 @@
 package techproed.day02;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.options.UiAutomator2Options;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+import techproed.baseTest.ApiDemosBaseTest;
 
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
+public class C02_Locators extends ApiDemosBaseTest {
 
-public class C02_Locators {
-
-    @Test
-    public void testLocators() throws MalformedURLException {
-        String appUrl = System.getProperty("user.dir") // C:\Users\nrmn_\IdeaProjects\Appium_Upskills
-                + File.separator + "src" // src
-                + File.separator + "test" // test
-                + File.separator + "resources" // resources
-                + File.separator + "ApiDemos-debug.apk"; // ApiDemos-debug.apk
-
-        UiAutomator2Options options = new UiAutomator2Options()
-                .setApp(appUrl);
-
-        URL url = new URL("http://0.0.0.0:4723");
-        AndroidDriver driver = new AndroidDriver(url, options);
+        @Test
+        public void testLocators() {
 
         // 1 - accessibilityId
         WebElement element = driver.findElement(AppiumBy.accessibilityId("Accessibility"));

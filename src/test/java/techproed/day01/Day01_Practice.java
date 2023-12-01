@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Practice {
+public class Day01_Practice {
 
     @Test
     public void testCalculator() throws MalformedURLException {

@@ -1,33 +1,16 @@
 package techproed.day03;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
-import io.appium.java_client.android.options.UiAutomator2Options;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import techproed.baseTest.ApiDemosBaseTest;
 
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-public class C02_TemelEylemler {
+public class C02_TemelEylemler extends ApiDemosBaseTest {
 
     @Test
-    public void testTemelEylemler() throws MalformedURLException, InterruptedException {
-        String appUrl = System.getProperty("user.dir")
-                + File.separator + "src"
-                + File.separator + "test"
-                + File.separator + "resources"
-                + File.separator + "ApiDemos-debug.apk";
-
-        UiAutomator2Options options = new UiAutomator2Options()
-                .setApp(appUrl);
-
-        URL url = new URL("http://0.0.0.0:4723");
-        AndroidDriver driver = new AndroidDriver(url, options);
-
+    public void testTemelEylemler() throws InterruptedException {
         By app  = AppiumBy.accessibilityId("App");
         By activity = AppiumBy.accessibilityId("Activity");
         By customTitle = AppiumBy.accessibilityId("Custom Title");
