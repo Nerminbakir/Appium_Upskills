@@ -61,6 +61,13 @@ public class P02_GeneralStore extends GeneralStoreBaseTest{
             double price = Double.parseDouble(priceText.substring(1)); // 160.97  --> 120.0
             total += price;
         }
+
+//        for (WebElement w:products) {
+//            String priceText = w.getText();
+//            double price = Double.parseDouble(priceText.substring(1));
+//            total += price;
+//        }
+
         double totalAmount = Double.parseDouble(driver.findElement(AppiumBy.id("com.androidsample.generalstore:id/totalAmountLbl")).getText().substring(1));
         Assert.assertEquals(total, totalAmount);
 
@@ -68,7 +75,6 @@ public class P02_GeneralStore extends GeneralStoreBaseTest{
         checkBox.click();
         WebElement visitButton = driver.findElement(AppiumBy.id("com.androidsample.generalstore:id/btnProceed"));
         visitButton.click();
-
     }
 }
 
