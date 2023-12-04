@@ -20,6 +20,26 @@ public class C04_DragGesture extends ApiDemosBaseTest {
                 "endY", 671,
                 "speed", 500
         ));
+
+        // dragGesture(driver, element, 715, 671);
+        Thread.sleep(5000);
+    }
+
+    @Test
+    public void testDragGestureCoordinate() throws InterruptedException {
+        driver.findElement(AppiumBy.accessibilityId("Views")).click();
+        driver.findElement(AppiumBy.accessibilityId("Drag and Drop")).click();
+
+        driver.executeScript("mobile: dragGesture", ImmutableMap.of(
+                "startX", 240,
+                "startY", 660,
+                "endX", 715,
+                "endY", 671,
+                "speed", 500
+        ));
+
+        // dragGesture(driver, 240, 660, 715, 671);
+
         Thread.sleep(5000);
     }
 }
