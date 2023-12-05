@@ -89,5 +89,13 @@ public class ReusableMethods {
         Thread.sleep(2000);
     }
 
+    public void scrollGesture(AndroidDriver driver, WebElement element, String direction, double percent, int speed){
+        driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
+                "elementId", ((RemoteWebElement) element).getId(),
+                "direction", direction,
+                "percent", percent,
+                "speed", speed
+        ));
+    }
 
 }
