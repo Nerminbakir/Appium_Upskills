@@ -6,6 +6,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 
 public class ReusableMethods {
+    public void bekle(int second){
+        try {
+            Thread.sleep(second*1000);
+        } catch (InterruptedException e) {
+            System.out.println("Bekleme yapilamadi");
+            throw new RuntimeException(e);
+        }
+    }
 
     public void clickGesture(AndroidDriver driver, WebElement element){
         driver.executeScript("mobile: clickGesture", ImmutableMap.of(
@@ -69,7 +77,6 @@ public class ReusableMethods {
         ));
     }
 
-
     public void dragGesture(AndroidDriver driver, int startX, int startY, int endX, int endY){
         driver.executeScript("mobile: dragGesture", ImmutableMap.of(
                 "startX", startX,
@@ -79,14 +86,13 @@ public class ReusableMethods {
         ));
     }
 
-    public void swipeGesture(AndroidDriver driver, WebElement element, String direction, double percent, int speed) throws InterruptedException {
+    public void swipeGesture(AndroidDriver driver, WebElement element, String direction, double percent, int speed){
         driver.executeScript("mobile: swipeGesture", ImmutableMap.of(
                 "elementId", ((RemoteWebElement) element).getId(),
                 "direction", direction,
                 "percent", percent,
                 "speed", speed
         ));
-        Thread.sleep(2000);
     }
 
     public void scrollGesture(AndroidDriver driver, WebElement element, String direction, double percent, int speed){
@@ -97,5 +103,4 @@ public class ReusableMethods {
                 "speed", speed
         ));
     }
-
 }
